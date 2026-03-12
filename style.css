@@ -173,16 +173,9 @@
     width: 100%;
     height: 100%;
     display: flex;
-    display: none;
     flex-direction: column;
     gap: 20px;
     justify-content: center;
-}
-
-.active-course img:hover {
-    .development-cell {
-        display: flex;
-    }
 }
 
 .cell-heading {
