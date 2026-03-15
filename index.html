@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -25,6 +25,135 @@
 
             <p class="register">Don't have an account? <a href="#">Register</a></p>
         </form>
+    </div>
+
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>SkillDev Login</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 350px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+        }
+
+        .tabs {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .tabs label {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            border-bottom: 2px solid transparent;
+        }
+
+        input[type="radio"] {
+            display: none;
+        }
+
+        #student:checked~.tabs label[for="student"],
+        #institution:checked~.tabs label[for="institution"] {
+            border-bottom: 2px solid #4facfe;
+            color: #4facfe;
+        }
+
+        .form {
+            display: none;
+        }
+
+        #student:checked~.forms #student-form {
+            display: block;
+        }
+
+        #institution:checked~.forms #institution-form {
+            display: block;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button a{
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background: #4facfe;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #2d8cf0;
+        }
+    </style> -->
+</head>
+
+<body>
+
+    <div class="container">
+
+        <input type="radio" name="tab" id="student" checked>
+        <input type="radio" name="tab" id="institution">
+
+        <div class="tabs">
+            <label for="student">Student Login</label>
+            <label for="institution">Institution Login</label>
+        </div>
+
+        <div class="forms">
+
+            <div class="form" id="student-form">
+                <h3>Student Login</h3>
+                <input type="email" placeholder="Student Email">
+                <input type="password" placeholder="Password">
+                <button><a href="">Login</a></button>
+            </div>
+
+            <div class="form" id="institution-form">
+                <h3>Institution Login</h3>
+                <input type="text" placeholder="Institution ID">
+                <input type="password" placeholder="Password">
+                <button><a href="landingpage.html">Login</a></button>
+            </div>
+
+        </div>
+
     </div>
 
 </body>
