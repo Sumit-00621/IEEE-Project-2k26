@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Student Dashboard - SkillDev</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: #f4f7fb;
+        }
+
+        /* HEADER */
+        .header {
+            background: #4facfe;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            width: 220px;
+            background: white;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+            padding-top: 20px;
+        }
+
+        .sidebar label {
+            display: block;
+            padding: 15px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .sidebar label:hover {
+            background: #f0f0f0;
+        }
+
+        input[type="radio"] {
+            display: none;
+        }
+
+        /* ACTIVE TAB */
+        #progress:checked~.container .sidebar label[for="progress"],
+        #skills:checked~.container .sidebar label[for="skills"],
+        #cells:checked~.container .sidebar label[for="cells"],
+        #events:checked~.container .sidebar label[for="events"],
+        #profile:checked~.container .sidebar label[for="profile"] {
+            background: #4facfe;
+            color: white;
+        }
+
+        /* CONTENT */
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .section {
+            display: none;
+        }
+
+        #progress:checked~.container .content #progress-section,
+        #skills:checked~.container .content #skills-section,
+        #cells:checked~.container .content #cells-section,
+        #events:checked~.container .content #events-section,
+        #profile:checked~.container .content #profile-section {
+            display: block;
+        }
+
+        /* CARDS */
+        .card {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* PROGRESS BAR */
+        .progress-bar {
+            background: #ddd;
+            border-radius: 20px;
+            overflow: hidden;
+            height: 20px;
+            margin-top: 5px;
+        }
+
+        .progress {
+            height: 100%;
+            background: #4facfe;
+            text-align: right;
+            color: white;
+            padding-right: 5px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">Student Dashboard - SkillDev</div>
+
+    <!-- RADIO CONTROLS -->
+    <input type="radio" name="tab" id="progress" checked>
+    <input type="radio" name="tab" id="skills">
+    <input type="radio" name="tab" id="cells">
+    <input type="radio" name="tab" id="events">
+    <input type="radio" name="tab" id="profile">
+
+    <div class="container">
+
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+            <label for="progress">Progress</label>
+            <label for="skills">Skills</label>
+            <label for="cells">Development Cells</label>
+            <label for="events">Events</label>
+            <label for="profile">Profile</label>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="content">
+
+            <!-- PROGRESS -->
+            <div class="section" id="progress-section">
+                <h2>Progress Tracking</h2>
+
+                <div class="card">
+                    Web Development
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 70%;">70%</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    Communication Skills
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 50%;">50%</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- SKILLS -->
+            <div class="section" id="skills-section">
+                <h2>Skills Developed</h2>
+
+                <div class="card">HTML & CSS</div>
+                <div class="card">Public Speaking</div>
+                <div class="card">Team Collaboration</div>
+            </div>
+
+            <!-- CELLS -->
+            <div class="section" id="cells-section">
+                <h2>Enrolled Development Cells</h2>
+
+                <div class="card">Tech Development Cell</div>
+                <div class="card">Cultural Development Cell</div>
+            </div>
+
+            <!-- EVENTS -->
+            <div class="section" id="events-section">
+                <h2>My Events</h2>
+
+                <div class="card">Hackathon 2026 (Participating)</div>
+                <div class="card">Cultural Fest (Registered)</div>
+            </div>
+
+            <!-- PROFILE -->
+            <div class="section" id="profile-section">
+                <h2>Profile</h2>
+
+                <div class="card">
+                    Name: Rohit Kumar <br>
+                    Class: 10 <br>
+                    School: ABC School <br>
+                    Email: rohit@email.com
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

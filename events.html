@@ -3,21 +3,195 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Events</title>
-    <link rel="stylesheet" href="landingpage.css">
+    <title>Events - SkillDev</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: #f4f7fb;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 90%;
+            margin: auto;
+        }
+
+        /* TABS */
+        .tabs {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .tabs label {
+            padding: 10px 20px;
+            margin: 5px;
+            background: #ddd;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        input[type="radio"] {
+            display: none;
+        }
+
+        #past:checked~.tabs label[for="past"],
+        #current:checked~.tabs label[for="current"],
+        #upcoming:checked~.tabs label[for="upcoming"] {
+            background: #4facfe;
+            color: white;
+        }
+
+        /* EVENTS GRID */
+        .events {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            color: white;
+            margin-top: 10px;
+        }
+
+        .past {
+            background: #999;
+        }
+
+        .current {
+            background: #28a745;
+        }
+
+        .upcoming {
+            background: #ff9800;
+        }
+
+        .btn {
+            display: block;
+            margin-top: 10px;
+            padding: 8px;
+            text-align: center;
+            background: #4facfe;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        /* SHOW / HIDE LOGIC */
+        .section {
+            display: none;
+        }
+
+        #past:checked~.events #past-events,
+        #current:checked~.events #current-events,
+        #upcoming:checked~.events #upcoming-events {
+            display: grid;
+        }
+    </style>
 </head>
 
 <body>
-    <!-- EVENTS -->
-    <section class="events-information" id="events">
-        <div class="events-heading">EVENTS</div>
-        <div class="event-grid">
-            <div class="event-info">Past Events</div>
-            <div class="event-info">Current Events</div>
-            <div class="event-info">Upcoming Events</div>
+
+    <div class="container">
+
+        <h1>Events</h1>
+
+        <!-- RADIO BUTTONS -->
+        <input type="radio" name="event" id="past">
+        <input type="radio" name="event" id="current" checked>
+        <input type="radio" name="event" id="upcoming">
+
+        <!-- TABS -->
+        <div class="tabs">
+            <label for="past">Past Events</label>
+            <label for="current">Current Events</label>
+            <label for="upcoming">Upcoming Events</label>
         </div>
-    </section>
+
+        <!-- EVENTS -->
+        <div class="events">
+
+            <!-- PAST EVENTS -->
+            <div class="section" id="past-events">
+                <div class="card">
+                    <h3>Web Development Workshop</h3>
+                    <p>Date: 10 March</p>
+                    <p>Completed successfully with 100+ students.</p>
+                    <span class="tag past">Past</span>
+                </div>
+
+                <div class="card">
+                    <h3>Photography Contest</h3>
+                    <p>Date: 5 March</p>
+                    <p>Creative submissions from all regions.</p>
+                    <span class="tag past">Past</span>
+                </div>
+            </div>
+
+            <!-- CURRENT EVENTS -->
+            <div class="section" id="current-events">
+                <div class="card">
+                    <h3>Hackathon 2026</h3>
+                    <p>Ongoing</p>
+                    <p>Build innovative tech projects.</p>
+                    <span class="tag current">Live</span>
+                    <a href="#" class="btn">Participate</a>
+                </div>
+
+                <div class="card">
+                    <h3>Sports Tournament</h3>
+                    <p>Ongoing</p>
+                    <p>Inter-school competitions.</p>
+                    <span class="tag current">Live</span>
+                    <a href="#" class="btn">Join</a>
+                </div>
+            </div>
+
+            <!-- UPCOMING EVENTS -->
+            <div class="section" id="upcoming-events">
+                <div class="card">
+                    <h3>Startup Bootcamp</h3>
+                    <p>Date: 30 March</p>
+                    <p>Learn entrepreneurship skills.</p>
+                    <span class="tag upcoming">Upcoming</span>
+                    <a href="#" class="btn">Register</a>
+                </div>
+
+                <div class="card">
+                    <h3>Cultural Fest</h3>
+                    <p>Date: 5 April</p>
+                    <p>Dance, music, and drama events.</p>
+                    <span class="tag upcoming">Upcoming</span>
+                    <a href="#" class="btn">Register</a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
 </body>
 
 </html>

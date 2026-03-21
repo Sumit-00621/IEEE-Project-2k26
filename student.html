@@ -1,0 +1,240 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login</title>
+    <link rel="stylesheet" href="landingpage.css">
+
+    <style>
+        /* CHATBOT ICON */
+        #chatbot-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: black;
+            color: white;
+            font-size: 24px;
+            padding: 12px 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        /* CHATBOX */
+        #chatbot-box {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            width: 300px;
+            height: 400px;
+            background: white;
+            border-radius: 10px;
+            display: none;
+            flex-direction: column;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+
+        .chat-header {
+            background: black;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .chat-body {
+            flex: 1;
+            padding: 10px;
+            overflow-y: auto;
+        }
+
+        .chat-footer {
+            display: flex;
+        }
+
+        .chat-footer input {
+            flex: 1;
+            padding: 8px;
+            border: none;
+            border-top: 1px solid #ccc;
+        }
+
+        .chat-footer button {
+            padding: 8px;
+            background: black;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .bot-message {
+            background: #f1f1f1;
+            padding: 8px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+
+        .user-message {
+            background: black;
+            color: white;
+            padding: 8px;
+            margin: 5px 0;
+            border-radius: 5px;
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- NAVBAR -->
+        <nav class="navbar">
+            <div class="logo"><img src="LOGO.jpg.jpeg" alt=""></div>
+            <div class="menu">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="developmentcell.html">Courses</a></li>
+                    <li><a href="events.html">Events</a></li>
+                </ul>
+            </div>
+            <div class="contact-button"><a href="#contact">Contact</a></div>
+        </nav>
+
+        <!-- HOME -->
+        <section id="home" class="project-introduction">
+            <div class="project-heading-1">SkillDev</div>
+            <div class="project-heading-2">Where Young Minds Turn Skills Into Superpowers</div>
+            <div class="project-description">
+                SkillDev is a learning platform designed to help students from Class 6–12
+                discover their potential through courses, events, and mentorship.
+            </div>
+            <div class="project-buttons">
+                <div class="view-courses"><a href="developmentcell.html">Courses</a></div>
+                <div class="contact-button"><a href="#contact">Contact</a></div>
+            </div>
+        </section>
+
+        <!-- DASHBOARD -->
+        <section class="institution-dashboard">
+            <div class="dashboard-heading">Welcome! Student Name</div>
+            <div class="dashboard-content">
+                <div class="dashboard-item">
+                    <a href="studentdashboard.html"><img src="student_dashboard.png" alt=""></a>
+                </div>
+                <div class="dashboard-item">
+                    <a href="events.html"><img src="events-logo.png" alt=""></a>
+                </div>
+                <div class="dashboard-item active-courses">
+                    <a href="developmentcell.html"><img src="active courses.png" alt=""></a>
+                </div>
+                <div class="dashboard-item">
+                    <a href="mentordetailsstudent.html"><img src="total mentor.png" alt=""></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="contact-us">
+            <div class="contact-heading">Get in Touch</div>
+            <div class="contact-subheading">Contact us for more information</div>
+            <div class="contact-content">
+                <div class="contact-image"><img src="contact-image.png" alt=""></div>
+                <div class="contact-info">
+
+                    <div class="contact-list">
+                        <div class="contact-list-image"><img src="email-logo.png" alt=""></div>
+                        <div class="contact-list-items">
+                            <div>Email Us</div>
+                            <div>info@skillupinstitute.com</div>
+                        </div>
+                    </div>
+
+                    <div class="contact-list">
+                        <div class="contact-list-image"><img src="phone-logo.png" alt=""></div>
+                        <div class="contact-list-items">
+                            <div>Call Us</div>
+                            <div>9557042108</div>
+                        </div>
+                    </div>
+
+                    <div class="contact-list">
+                        <div class="contact-list-image"><img src="location-logo.png" alt=""></div>
+                        <div class="contact-list-items">
+                            <div>Visit Us</div>
+                            <div>Mathura Uttar Pradesh</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- CHATBOT -->
+    <div id="chatbot-icon" onclick="toggleChatbot()">💬</div>
+
+    <div id="chatbot-box">
+        <div class="chat-header">
+            SkillDev Assistant
+            <span onclick="toggleChatbot()">✖</span>
+        </div>
+
+        <div class="chat-body" id="chat-body">
+            <div class="bot-message">Hi 👋! Ask me about courses, events, or mentors.</div>
+        </div>
+
+        <div class="chat-footer">
+            <input type="text" id="user-input" placeholder="Type your question..." />
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        function toggleChatbot() {
+            const box = document.getElementById("chatbot-box");
+            box.style.display = box.style.display === "flex" ? "none" : "flex";
+        }
+
+        function sendMessage() {
+            const input = document.getElementById("user-input");
+            const message = input.value;
+            const chatBody = document.getElementById("chat-body");
+
+            if (message.trim() === "") return;
+
+            const userMsg = document.createElement("div");
+            userMsg.className = "user-message";
+            userMsg.innerText = message;
+            chatBody.appendChild(userMsg);
+
+            const botMsg = document.createElement("div");
+            botMsg.className = "bot-message";
+
+            if (message.toLowerCase().includes("course")) {
+                botMsg.innerText = "Explore courses in the Courses section 📚.";
+            }
+            else if (message.toLowerCase().includes("event")) {
+                botMsg.innerText = "Check Events tab for upcoming activities 🎉.";
+            }
+            else if (message.toLowerCase().includes("mentor")) {
+                botMsg.innerText = "Mentors are available in your dashboard 👨‍🏫.";
+            }
+            else {
+                botMsg.innerText = "Ask about courses, events, or mentors 😊.";
+            }
+
+            chatBody.appendChild(botMsg);
+            input.value = "";
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+    </script>
+
+</body>
+
+</html>

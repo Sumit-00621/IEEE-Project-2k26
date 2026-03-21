@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>My Mentors - SkillDev</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 0;
+            background: #f4f7fb;
+        }
+
+        .header {
+            background: #4facfe;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .container {
+            width: 90%;
+            margin: auto;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        /* FILTER TABS */
+        .filters {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .filters label {
+            padding: 10px 20px;
+            margin: 5px;
+            background: #ddd;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        input[type="radio"] {
+            display: none;
+        }
+
+        /* ACTIVE FILTER */
+        #tech:checked~.filters label[for="tech"],
+        #sports:checked~.filters label[for="sports"],
+        #cultural:checked~.filters label[for="cultural"] {
+            background: #4facfe;
+            color: white;
+        }
+
+        /* GRID */
+        .mentors {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .tag {
+            display: inline-block;
+            background: #4facfe;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        .contact {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .btn {
+            display: block;
+            margin-top: 10px;
+            padding: 8px;
+            text-align: center;
+            background: #4facfe;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        /* FILTER LOGIC */
+        #tech:checked~.mentors .card:not(.tech),
+        #sports:checked~.mentors .card:not(.sports),
+        #cultural:checked~.mentors .card:not(.cultural) {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">My Mentors</div>
+
+    <div class="container">
+
+        <h2>Mentors from Your Development Cell</h2>
+
+        <!-- Assume student enrolled in TECH -->
+        <input type="radio" name="cell" id="tech" checked>
+        <input type="radio" name="cell" id="sports">
+        <input type="radio" name="cell" id="cultural">
+
+        <!-- FILTER (optional switch) -->
+        <div class="filters">
+            <label for="tech">Tech</label>
+            <label for="sports">Sports</label>
+            <label for="cultural">Cultural</label>
+        </div>
+
+        <!-- MENTORS -->
+        <div class="mentors">
+
+            <!-- TECH MENTORS -->
+            <div class="card tech">
+                <h3>Rahul Sharma</h3>
+                <p>Tech Development Cell</p>
+                <span class="tag">Tech</span>
+
+                <div class="contact">
+                    <p>📧 rahul@email.com</p>
+                    <p>📞 +91 9876543210</p>
+                </div>
+
+                <a href="#" class="btn">Connect</a>
+            </div>
+
+            <div class="card tech">
+                <h3>Pooja Gupta</h3>
+                <p>Web Development Mentor</p>
+                <span class="tag">Tech</span>
+
+                <div class="contact">
+                    <p>📧 pooja@email.com</p>
+                    <p>📞 +91 9090909090</p>
+                </div>
+
+                <a href="#" class="btn">Connect</a>
+            </div>
+
+            <!-- SPORTS MENTORS -->
+            <div class="card sports">
+                <h3>Amit Singh</h3>
+                <p>Sports Development Cell</p>
+                <span class="tag">Sports</span>
+
+                <div class="contact">
+                    <p>📧 amit@email.com</p>
+                    <p>📞 +91 9988776655</p>
+                </div>
+
+                <a href="#" class="btn">Connect</a>
+            </div>
+
+            <!-- CULTURAL MENTORS -->
+            <div class="card cultural">
+                <h3>Anjali Verma</h3>
+                <p>Cultural Development Cell</p>
+                <span class="tag">Cultural</span>
+
+                <div class="contact">
+                    <p>📧 anjali@email.com</p>
+                    <p>📞 +91 9123456780</p>
+                </div>
+
+                <a href="#" class="btn">Connect</a>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

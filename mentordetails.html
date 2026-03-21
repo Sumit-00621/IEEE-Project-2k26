@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mentor Directory - SkillDev</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 0;
+            background: #f4f7fb;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 90%;
+            margin: auto;
+        }
+
+        /* FILTER BUTTONS */
+        .filters {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .filters label {
+            padding: 10px 20px;
+            margin: 5px;
+            background: #ddd;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        input[type="radio"] {
+            display: none;
+        }
+
+        #all:checked~.filters label[for="all"],
+        #mathura:checked~.filters label[for="mathura"],
+        #agra:checked~.filters label[for="agra"],
+        #delhi:checked~.filters label[for="delhi"] {
+            background: #4facfe;
+            color: white;
+        }
+
+        /* GRID */
+        .mentors {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .tag {
+            display: inline-block;
+            background: #4facfe;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            margin: 5px 0;
+        }
+
+        .contact {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .contact p {
+            margin: 5px 0;
+        }
+
+        .btn {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            padding: 8px;
+            background: #4facfe;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #2d8cf0;
+        }
+
+        /* FILTER LOGIC */
+        #mathura:checked~.mentors .card:not(.mathura),
+        #agra:checked~.mentors .card:not(.agra),
+        #delhi:checked~.mentors .card:not(.delhi) {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Mentor Directory</h1>
+
+        <!-- RADIO FILTER -->
+        <input type="radio" name="region" id="all" checked>
+        <input type="radio" name="region" id="mathura">
+        <input type="radio" name="region" id="agra">
+        <input type="radio" name="region" id="delhi">
+
+        <!-- FILTERS -->
+        <div class="filters">
+            <label for="all">All</label>
+            <label for="mathura">Mathura</label>
+            <label for="agra">Agra</label>
+            <label for="delhi">Delhi</label>
+        </div>
+
+        <!-- MENTORS -->
+        <div class="mentors">
+
+            <div class="card mathura">
+                <h3>Rahul Sharma</h3>
+                <p>Tech Development Cell</p>
+                <span class="tag">Mathura</span>
+
+                <div class="contact">
+                    <p>📧 rahul@email.com</p>
+                    <p>📞 +91 9876543210</p>
+                </div>
+
+                <a href="#" class="btn">Connect</a>
+            </div>
+
+            <div class="card agra">
+                <h3>Anjali Verma</h3>
+                <p>Cultural Development Cell</p>
+                <span class="tag">Agra</span>
+
+                <div class="contact">
+                    <p>📧 anjali@email.com</p>
+                    <p>📞 +91 9123456780</p>
+                </div>
+
+                <a href="#" class="btn">Connect</a>
+            </div>
+
+            <div class="card delhi">
+                <h3>Amit Singh</h3>
+                <p>Sports Development Cell</p>
+                <span class="tag">Delhi</span>
+
+                <div class="contact">
+                    <p>📧 amit@email.com</p>
+                    <p>📞 +91 9988776655</p>
+                </div>
+
+                <a href="#" class="btn">Connect</a>
+            </div>
+
+            <div class="card mathura">
+                <h3>Pooja Gupta</h3>
+                <p>Entrepreneurship Cell</p>
+                <span class="tag">Mathura</span>
+
+                <div class="contact">
+                    <p>📧 pooja@email.com</p>
+                    <p>📞 +91 9090909090</p>
+                </div>
+
+                <a href="#" class="btn">Connect</a>
+            </div>
+
+            <div class="card agra">
+                <h3>Karan Mehta</h3>
+                <p>Photography Cell</p>
+                <span class="tag">Agra</span>
+
+                <div class="contact">
+                    <p>📧 karan@email.com</p>
+                    <p>📞 +91 8888888888</p>
+                </div>
+
+                <a href="#" class="btn">Connect</a>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,74 +1,3 @@
-/* * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-body {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(135deg, #4facfe, #00f2fe);
-}
-
-.login-container {
-    background: white;
-    padding: 40px;
-    width: 300px;
-    border-radius: 10px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    text-align: center;
-}
-
-.login-container h2 {
-    margin-bottom: 20px;
-}
-
-.input-box {
-    margin-bottom: 15px;
-}
-
-.submit a{
-text-decoration: none;
-color: white;
-font-weight: bold;
-}
-.input-box input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-button {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    background: #4facfe;
-    color: white;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-button:hover {
-    background: #00c6ff;
-}
-
-.register {
-    margin-top: 15px;
-    font-size: 14px;
-}
-
-.register a {
-    text-decoration: none;
-    color: #4facfe;
-} */
-
-
 body {
     font-family: Arial, Helvetica, sans-serif;
     background: linear-gradient(135deg, #4facfe, #00f2fe);
@@ -79,11 +8,11 @@ body {
 }
 
 .container {
-    width: 350px;
+    width: 360px;
     background: white;
-    border-radius: 10px;
+    border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    padding: 30px;
+    padding: 25px;
 }
 
 .tabs {
@@ -98,22 +27,39 @@ body {
     cursor: pointer;
     font-weight: bold;
     border-bottom: 2px solid transparent;
+    transition: 0.3s;
 }
 
 input[type="radio"] {
     display: none;
 }
 
+/* Active Tabs */
 #student:checked~.tabs label[for="student"],
-#institution:checked~.tabs label[for="institution"] {
+#institution:checked~.tabs label[for="institution"],
+#mentor:checked~.tabs label[for="mentor"] {
     border-bottom: 2px solid #4facfe;
     color: #4facfe;
 }
 
 .form {
     display: none;
+    animation: fade 0.4s ease;
 }
 
+@keyframes fade {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Show Forms */
 #student:checked~.forms #student-form {
     display: block;
 }
@@ -122,19 +68,20 @@ input[type="radio"] {
     display: block;
 }
 
+#mentor:checked~.forms #mentor-form {
+    display: block;
+}
+
+h3 {
+    margin-bottom: 15px;
+}
+
 input {
     width: 100%;
     padding: 10px;
-    margin: 10px 0;
+    margin: 8px 0;
     border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-button a {
-    text-decoration: none;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
+    border-radius: 6px;
 }
 
 button {
@@ -144,10 +91,32 @@ button {
     background: #4facfe;
     color: white;
     font-size: 16px;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
+    margin-top: 10px;
 }
 
 button:hover {
     background: #2d8cf0;
+}
+
+button a {
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+
+.register {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.register a {
+    color: #4facfe;
+    text-decoration: none;
+}
+
+.register a:hover {
+    text-decoration: underline;
 }
