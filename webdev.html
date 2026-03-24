@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Dev Bootcamp</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", sans-serif;
+            background: #f6f9ff;
+        }
+
+        /* HEADER */
+        .header {
+            background: white;
+            padding: 25px 40px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .header h1 {
+            margin: 0;
+            color: #1e3a8a;
+        }
+
+        .subtext {
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        /* PROGRESS */
+        .progress-container {
+            margin-top: 15px;
+        }
+
+        .progress-bar {
+            background: #e5e7eb;
+            border-radius: 20px;
+            overflow: hidden;
+            height: 8px;
+        }
+
+        .progress-fill {
+            width: 45%;
+            height: 100%;
+            background: #2563eb;
+        }
+
+        .progress-text {
+            font-size: 12px;
+            margin-top: 5px;
+            color: #555;
+        }
+
+        /* MAIN */
+        .container {
+            padding: 30px 40px;
+        }
+
+        /* LEVEL */
+        .level {
+            margin-bottom: 40px;
+        }
+
+        .level-title {
+            font-size: 20px;
+            color: #1e3a8a;
+            margin-bottom: 15px;
+        }
+
+        /* MODULE CARD */
+        .module {
+            background: white;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            transition: 0.3s;
+        }
+
+        .module:hover {
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        /* LOCKED */
+        .module.locked {
+            opacity: 0.6;
+        }
+
+        /* MODULE HEADER */
+        .module-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .module-header h3 {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .xp {
+            font-size: 12px;
+            color: #2563eb;
+        }
+
+        /* LESSON */
+        .lesson {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            padding: 8px 0;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .lesson span {
+            font-size: 14px;
+        }
+
+        .lesson button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 5px 12px;
+            border-radius: 5px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        .lesson button:disabled {
+            background: #9ca3af;
+        }
+
+        /* BADGES */
+        .badges {
+            margin-top: 30px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #e0ecff;
+            color: #1e3a8a;
+            padding: 6px 12px;
+            border-radius: 20px;
+            margin-right: 8px;
+            font-size: 12px;
+        }
+
+        /* PROJECT */
+        .project {
+            margin-top: 30px;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .project button {
+            margin-top: 10px;
+            background: #1e3a8a;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <div class="header">
+        <h1>Web Development Bootcamp</h1>
+        <div class="subtext">Structured learning path with hands-on projects</div>
+
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <div class="progress-text">Progress: 45% • 450 XP earned</div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!-- LEVEL 1 -->
+        <div class="level">
+            <div class="level-title">Beginner Level</div>
+
+            <div class="module">
+                <div class="module-header">
+                    <h3>HTML Fundamentals</h3>
+                    <span class="xp">+100 XP</span>
+                </div>
+
+                <div class="lesson">
+                    <span>Introduction to HTML</span>
+                    <button>Start</button>
+                </div>
+
+                <div class="lesson">
+                    <span>Tags & Structure</span>
+                    <button>Start</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- LEVEL 2 -->
+        <div class="level">
+            <div class="level-title">Intermediate Level</div>
+
+            <div class="module locked">
+                <div class="module-header">
+                    <h3>CSS & Layouts</h3>
+                    <span class="xp">+150 XP</span>
+                </div>
+
+                <div class="lesson">
+                    <span>Flexbox Basics</span>
+                    <button disabled>Locked</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- BADGES -->
+        <div class="badges">
+            <div class="level-title">Achievements</div>
+            <span class="badge">HTML Beginner</span>
+            <span class="badge">First Lesson Completed</span>
+        </div>
+
+        <!-- FINAL PROJECT -->
+        <div class="project">
+            <h3>Capstone Project</h3>
+            <p>Build a responsive website using all learned concepts.</p>
+            <button>Start Project</button>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

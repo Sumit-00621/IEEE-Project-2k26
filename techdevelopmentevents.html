@@ -1,0 +1,202 @@
+<!-- TECH DEVELOPMENT EVENTS -->
+<section class="tech-events">
+
+    <style>
+        .tech-events {
+            padding: 50px;
+            background: #f8fbff;
+            font-family: Arial, sans-serif;
+        }
+
+        /* HEADER */
+        .events-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .events-header h2 {
+            font-size: 32px;
+            color: #1e3a8a;
+        }
+
+        .events-header p {
+            color: #555;
+        }
+
+        /* TABS */
+        .tabs {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .tabs button {
+            margin: 5px;
+            padding: 8px 15px;
+            border: 1px solid #2563eb;
+            background: white;
+            color: #2563eb;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .tabs button.active,
+        .tabs button:hover {
+            background: #2563eb;
+            color: white;
+        }
+
+        /* EVENT GRID */
+        .event-container {
+            display: none;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .event-container.active {
+            display: grid;
+        }
+
+        /* CARD */
+        .event-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            border: 1px solid #e5e7eb;
+            transition: 0.3s;
+        }
+
+        .event-card:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .event-card h3 {
+            color: #2563eb;
+        }
+
+        .event-meta {
+            font-size: 14px;
+            color: #555;
+            margin: 10px 0;
+        }
+
+        /* BUTTON */
+        .event-btn {
+            padding: 8px 12px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .event-btn:hover {
+            background: #1e40af;
+        }
+
+        /* STATUS */
+        .live {
+            color: green;
+            font-weight: bold;
+        }
+
+        .upcoming {
+            color: orange;
+            font-weight: bold;
+        }
+
+        .past {
+            color: gray;
+            font-weight: bold;
+        }
+    </style>
+
+    <!-- HEADER -->
+    <div class="events-header">
+        <h2>Tech Development Events</h2>
+        <p>Participate in coding contests, workshops & hackathons 🚀</p>
+    </div>
+
+    <!-- TABS -->
+    <div class="tabs">
+        <button class="active" onclick="showTab('current')">Current</button>
+        <button onclick="showTab('upcoming')">Upcoming</button>
+        <button onclick="showTab('past')">Past</button>
+    </div>
+
+    <!-- CURRENT EVENTS -->
+    <div id="current" class="event-container active">
+
+        <div class="event-card">
+            <h3>🔥 Live Coding Contest</h3>
+            <div class="event-meta">Date: 25 March | Duration: 2 hrs</div>
+            <div class="live">● Live Now</div>
+            <p>Solve DSA problems and compete with peers.</p>
+            <button class="event-btn">Join Now</button>
+        </div>
+
+        <div class="event-card">
+            <h3>💻 Web Dev Workshop</h3>
+            <div class="event-meta">Date: 26 March | Duration: 3 hrs</div>
+            <div class="live">● Ongoing</div>
+            <p>Hands-on session on building responsive websites.</p>
+            <button class="event-btn">Join Now</button>
+        </div>
+
+    </div>
+
+    <!-- UPCOMING EVENTS -->
+    <div id="upcoming" class="event-container">
+
+        <div class="event-card">
+            <h3>🚀 Hackathon 2026</h3>
+            <div class="event-meta">Date: 30 March</div>
+            <div class="upcoming">● Upcoming</div>
+            <p>Build innovative tech solutions and win prizes.</p>
+            <button class="event-btn">Register</button>
+        </div>
+
+        <div class="event-card">
+            <h3>🤖 AI Bootcamp</h3>
+            <div class="event-meta">Date: 2 April</div>
+            <div class="upcoming">● Upcoming</div>
+            <p>Introduction to AI & Machine Learning basics.</p>
+            <button class="event-btn">Register</button>
+        </div>
+
+    </div>
+
+    <!-- PAST EVENTS -->
+    <div id="past" class="event-container">
+
+        <div class="event-card">
+            <h3>📚 Python Workshop</h3>
+            <div class="event-meta">Date: 10 March</div>
+            <div class="past">● Completed</div>
+            <p>Learned Python basics and mini projects.</p>
+            <button class="event-btn">View Details</button>
+        </div>
+
+        <div class="event-card">
+            <h3>🎯 DSA Challenge</h3>
+            <div class="event-meta">Date: 15 March</div>
+            <div class="past">● Completed</div>
+            <p>Competitive coding contest for students.</p>
+            <button class="event-btn">View Results</button>
+        </div>
+
+    </div>
+
+    <script>
+        function showTab(tab) {
+            let containers = document.querySelectorAll(".event-container");
+            let buttons = document.querySelectorAll(".tabs button");
+
+            containers.forEach(c => c.classList.remove("active"));
+            buttons.forEach(b => b.classList.remove("active"));
+
+            document.getElementById(tab).classList.add("active");
+            event.target.classList.add("active");
+        }
+    </script>
+
+</section>
